@@ -1,0 +1,21 @@
+{
+  "name": "SendEmailNotification",
+  "dataSource": "System",
+  "expression": "if(args == null)\r\n    throw new ArgumentNullException(nameof(args), \"Missing arguments 'Email', 'Subject' and 'Body'.\");\r\nif (!args.ContainsKey(\"Email\"))\r\n    throw new ArgumentNullException(\"Email\", \"Missing required argument 'Email'.\");\r\nif (!args.ContainsKey(\"Subject\"))\r\n    throw new ArgumentNullException(\"Subject\", \"Missing required argument 'Subject'.\");\r\nif (!args.ContainsKey(\"Body\"))\r\n    throw new ArgumentNullException(\"Body\", \"Missing required argument 'Body'.\");\r\n\r\nvar httpClient = context.CreateApplicationHttpClient();\r\nvar requestResult = httpClient.GetAsync<Dictionary<string, object>>(\"Settings/Default/SMTP\").GetAwaiter().GetResult();\r\nif (requestResult == null)\r\n    throw new Exception(\"SMTP settings not found.\");\r\n\r\nvar host = requestResult[\"host\"].ToString();\r\nvar port = int.Parse(requestResult[\"port\"].ToString());\r\nvar username = requestResult[\"username\"].ToString();\r\n\r\nif (requestResult[\"from\"] == null)\r\n    throw new Exception(\"FROM Address is not configured on SMTP Configurations. Please review them.\");\r\n\r\nvar from = requestResult[\"from\"].ToString();\r\nvar enableSsl = bool.Parse(requestResult[\"enableSsl\"].ToString());\r\nvar password = requestResult[\"password\"] != null ? requestResult[\"password\"].ToString() : string.Empty;\r\n\r\nvar decryptArgs = new Dictionary<string, object> { { \"EncryptedText\", password } };\r\nvar decrypted = SystemApplicationBehaviours.Decrypt(decryptArgs);\r\nusing (var client = new SmtpClient())\r\n{\r\n    client.Port = port;\r\n    client.DeliveryMethod = SmtpDeliveryMethod.Network;\r\n    client.UseDefaultCredentials = false;\r\n    client.Credentials = new NetworkCredential(username, decrypted[\"DecryptedText\"].ToString());\r\n    client.EnableSsl = enableSsl;\r\n    client.Host = host;\r\n    var mail = new MailMessage(from, args[\"Email\"] != null ? args[\"Email\"].ToString() : string.Empty)\r\n    {\r\n        Subject = args[\"Subject\"].ToString(), \r\n        Body = args[\"Body\"].ToString(), \r\n        IsBodyHtml = true\r\n    };\r\n    client.Send(mail);\r\n    return new Dictionary<string, object>();\r\n}",
+  "description": "Sends an Email Notification over SMTP.\nThis application behaviour requires the arguments: \"Email\", \"Subject\" and \"Body\".\nTo execute, is required to configure the SMTP Settings with the Generic Entity \"Settings\"",
+  "executionLocation": "Internal",
+  "behaviourNamespaces": [
+    {
+      "name": "SystemNetMail",
+      "description": "",
+      "executionLocation": "Internal",
+      "fullyQualifiedName": "System.Net.Mail"
+    },
+    {
+      "name": "SystemNet",
+      "description": "",
+      "executionLocation": "Internal",
+      "fullyQualifiedName": "System.Net"
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "name": "SettingsForm",
+  "type": "Form",
+  "label": "Settings",
+  "entity": "Settings",
+  "elements": [
+    {
+      "row": 1,
+      "name": "_code",
+      "size": 6,
+      "type": "Input",
+      "label": "Code",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "true"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "1"
+        },
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null
+    },
+    {
+      "row": 2,
+      "name": "Host",
+      "size": 4,
+      "type": "Input",
+      "label": "Host",
+      "column": 3,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "1"
+        },
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null
+    },
+    {
+      "row": 2,
+      "name": "Port",
+      "size": 2,
+      "type": "Input",
+      "label": "Port",
+      "column": 7,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "1"
+        },
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null
+    },
+    {
+      "row": 2,
+      "name": "EnableSsl",
+      "size": 2,
+      "type": "Input",
+      "label": "Enable SSL",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "0"
+        },
+        {
+          "key": "formattingType",
+          "value": "Boolean"
+        }
+      ],
+      "behaviours": [],
+      "description": null
+    },
+    {
+      "row": 3,
+      "name": "Username",
+      "size": 6,
+      "type": "Input",
+      "label": "Username",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "1"
+        },
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null
+    },
+    {
+      "row": 3,
+      "name": "From",
+      "size": 6,
+      "type": "Input",
+      "label": "From",
+      "column": 7,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "1"
+        },
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null
+    },
+    {
+      "row": 4,
+      "name": "ChangePassword",
+      "size": 2,
+      "type": "Input",
+      "label": "Change Password",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "0"
+        },
+        {
+          "key": "formattingType",
+          "value": "Boolean"
+        }
+      ],
+      "behaviours": [
+        {
+          "name": "OnChange_ChangePassword",
+          "type": "Change",
+          "expression": "this._metadata.elements.newPassword.attributes.isReadOnly = !newValue;\n\nif (!newValue)\n    this.newPassword = null;",
+          "description": ""
+        }
+      ],
+      "description": null
+    },
+    {
+      "row": 4,
+      "name": "NewPassword",
+      "size": 4,
+      "type": "Input",
+      "label": "New Password",
+      "column": 3,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "true"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "0"
+        },
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [],
+  "behaviours": [
+    {
+      "name": "Initializer",
+      "type": "Initialize",
+      "expression": "this._metadata.elements.newPassword.attributes.isReadOnly = !this.changePassword;",
+      "description": ""
+    }
+  ],
+  "dataSource": "System",
+  "description": null
+}

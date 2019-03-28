@@ -1,0 +1,27 @@
+{
+  "name": "Decrypt",
+  "dataSource": "System",
+  "expression": "if (args == null || !args.ContainsKey(\"EncryptedText\"))\r\n    throw new ArgumentNullException(\"EncryptedText\", \"Missing required argument 'EncryptedText'.\");\r\n\r\nvar keyString = SystemApplicationBehaviours.GetEncryptionKey()[\"key\"].ToString();\r\nvar cipherText = args[\"EncryptedText\"].ToString();\r\nvar fullCipher = Convert.FromBase64String(cipherText);\r\n\r\nvar iv = new byte[16];\r\nvar cipher = new byte[fullCipher.Length - iv.Length];\r\n\r\nBuffer.BlockCopy(fullCipher, 0, iv, 0, iv.Length);\r\nBuffer.BlockCopy(fullCipher, iv.Length, cipher, 0, fullCipher.Length - iv.Length);\r\nvar key = Encoding.UTF8.GetBytes(keyString.PadRight(32).Substring(0, 32));\r\n\r\nusing (var aesAlg = Aes.Create())\r\nusing (var decryptor = aesAlg.CreateDecryptor(key, iv))\r\nusing (var msDecrypt = new MemoryStream(cipher))\r\nusing (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))\r\nusing (var srDecrypt = new StreamReader(csDecrypt))\r\n{\r\n    return new Dictionary<string, object>\r\n        {\r\n            { \"DecryptedText\", srDecrypt.ReadToEnd() }\r\n        };\r\n}",
+  "description": "Decrypt a given text provided by the argument \"EncryptedText\" and returns the decrypted text.",
+  "executionLocation": "Internal",
+  "behaviourNamespaces": [
+    {
+      "name": "SystemSecurityCryptography",
+      "description": "",
+      "executionLocation": "Internal",
+      "fullyQualifiedName": "System.Security.Cryptography"
+    },
+    {
+      "name": "SystemText",
+      "description": "",
+      "executionLocation": "Internal",
+      "fullyQualifiedName": "System.Text"
+    },
+    {
+      "name": "SystemIO",
+      "description": "",
+      "executionLocation": "Internal",
+      "fullyQualifiedName": "System.IO"
+    }
+  ]
+}

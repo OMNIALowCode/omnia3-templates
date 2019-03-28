@@ -1,0 +1,30 @@
+{
+  "name": "SettingsDashboard",
+  "type": "Dashboard",
+  "label": "Settings",
+  "elements": [
+    {
+      "row": 1,
+      "name": "SettingsList",
+      "size": 12,
+      "type": "List",
+      "label": "Settings",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "listCode",
+          "value": "SettingsList"
+        }
+      ],
+      "behaviours": [],
+      "description": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [],
+  "behaviours": [],
+  "description": null
+}

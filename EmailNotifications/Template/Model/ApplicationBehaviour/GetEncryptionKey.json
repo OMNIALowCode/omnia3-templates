@@ -1,0 +1,8 @@
+{
+  "name": "GetEncryptionKey",
+  "dataSource": "System",
+  "expression": "return new Dictionary<string, object>\n{\n    { \"key\", \"0K1BR6J2LXLpEWhxqJ1C15GZr04497JFaq8qf8m6xKT4vDAkY\" }\n};",
+  "description": "Returns the Encryption Key in the argument \"key\" used by the Encrypt and Decrypt behaviours.\nIt's recommended to change this key for production scenarios.",
+  "executionLocation": "Internal",
+  "behaviourNamespaces": []
+}

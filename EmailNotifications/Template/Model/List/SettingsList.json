@@ -1,0 +1,98 @@
+{
+  "name": "SettingsList",
+  "type": "List",
+  "label": "Settings",
+  "query": "SettingsQuery",
+  "elements": [
+    {
+      "row": 0,
+      "name": "_code",
+      "size": 0,
+      "type": "ListColumn",
+      "label": "Code",
+      "column": 0,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_name",
+      "size": 0,
+      "type": "ListColumn",
+      "label": "Name",
+      "column": 0,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_description",
+      "size": 0,
+      "type": "ListColumn",
+      "label": "Description",
+      "column": 0,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_inactive",
+      "size": 0,
+      "type": "ListColumn",
+      "label": "Inactive",
+      "column": 0,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Boolean"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [
+    {
+      "key": "queryTableDefinition",
+      "value": "Settings"
+    }
+  ],
+  "behaviours": [],
+  "dataSource": "System",
+  "description": null
+}

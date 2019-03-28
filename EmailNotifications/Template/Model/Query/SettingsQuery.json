@@ -1,0 +1,35 @@
+{
+  "name": "SettingsQuery",
+  "joins": [],
+  "table": {
+    "alias": null,
+    "filter": null,
+    "definition": "Settings",
+    "properties": [
+      {
+        "path": "_code",
+        "alias": "_code",
+        "function": "None"
+      },
+      {
+        "path": "_name",
+        "alias": "_name",
+        "function": "None"
+      },
+      {
+        "path": "_description",
+        "alias": "_description",
+        "function": "None"
+      },
+      {
+        "path": "_inactive",
+        "alias": "_inactive",
+        "function": "None"
+      }
+    ],
+    "orderedProperties": []
+  },
+  "dataSource": "System",
+  "expression": null,
+  "description": null
+}
