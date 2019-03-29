@@ -31,7 +31,14 @@ IDictionary<string, object> erpBsResponse = PrimaveraApplicationBehaviours.Prima
     this._Context);
 
 if (!erpBsResponse.ContainsKey("ErpBS"))
-        throw new Exception("Error opening ERP Company");
+    throw new Exception("Error opening ERP Company");
+
+var erpBs = (ErpBS)erpBsResponse["ErpBS"];
+
+// Add your code here...
+
+if (erpBs.Contexto.EmpresaAberta)
+    erpBs.FechaEmpresaTrabalho();
 ```
 
 ## Create a List over the ERP Database
