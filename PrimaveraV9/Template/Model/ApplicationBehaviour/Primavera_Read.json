@@ -1,0 +1,27 @@
+{
+  "name": "Primavera_Read",
+  "dataSource": "Primavera",
+  "expression": "            string erpCompany, query;\r\n            erpCompany = query = string.Empty;\r\n            ErpBS bsERP = new ErpBS();\r\n            Dictionary<string, object> result = new Dictionary<string, object>();\r\n            if (!args.ContainsKey(\"Company\"))\r\n                throw new Exception(\"Company was not sent\");\r\n            else\r\n                erpCompany = args[\"Company\"].ToString();\r\n            if (!args.ContainsKey(\"Query\"))\r\n                throw new Exception(\"Query was not sent\");\r\n            else\r\n                query = args[\"Query\"].ToString();\r\n\r\n            Dictionary<string, object> arguments = new Dictionary<string, object>();\r\n            arguments.Add(\"Company\", erpCompany);\r\n            IDictionary<string, object> erpBs = PrimaveraApplicationBehaviours.Primavera_OpenCompany(arguments, context);\r\n            if (erpBs.ContainsKey(\"ErpBS\"))\r\n            {\r\n                bsERP = (ErpBS)erpBs[\"ErpBS\"];\r\n            }\r\n            else\r\n            {\r\n                throw new Exception(\"Error when opening ERP Company\");\r\n            }\r\n\r\n            StdBELista queryResults = bsERP.Consulta(query);\r\n            int numLinhas = queryResults.NumLinhas();\r\n            if (numLinhas < 1)\r\n\t\t\t{\r\n                throw new Exception(\"No Results Found\");\r\n\t\t\t}\r\n            int numColunas = queryResults.NumColunas();\r\n            string[] headers = new string[numColunas];\r\n            for (short i = 0; i < numColunas; i++)\r\n            {\r\n                headers[i] = queryResults.Nome(i);\r\n            }\r\n\r\n            Dictionary<string, object> entityData = new Dictionary<string, object>();\r\n            for (short j = 0; j < numColunas; j++)\r\n            {\r\n                var nome = headers[j];\r\n                entityData.Add(nome, queryResults.Valor(nome));\r\n            }\r\n\r\n            result.Add(\"Data\", entityData);\r\n            bsERP.FechaEmpresaTrabalho();\r\n            return result;",
+  "description": "",
+  "executionLocation": "External",
+  "behaviourNamespaces": [
+    {
+      "name": "StdBE900",
+      "description": "",
+      "executionLocation": "External",
+      "fullyQualifiedName": "Interop.StdBE900"
+    },
+    {
+      "name": "ErpBS900",
+      "description": "",
+      "executionLocation": "External",
+      "fullyQualifiedName": "Interop.ErpBS900"
+    },
+    {
+      "name": "NetHttp",
+      "description": "",
+      "executionLocation": "External",
+      "fullyQualifiedName": "System.Net.Http"
+    }
+  ]
+}

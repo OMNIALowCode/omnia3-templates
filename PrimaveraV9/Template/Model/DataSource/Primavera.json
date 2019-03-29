@@ -1,0 +1,275 @@
+{
+    "name": "Primavera",
+    "attributes": [{
+            "name": "_code",
+            "type": "Text",
+            "isSystem": true,
+            "isReadOnly": false,
+            "description": null,
+            "multiplicity": {
+                "lower": 1,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": null
+        },
+        {
+            "name": "_name",
+            "type": "Text",
+            "isSystem": true,
+            "isReadOnly": false,
+            "description": null,
+            "multiplicity": {
+                "lower": 1,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": null
+        },
+        {
+            "name": "_description",
+            "type": "Text",
+            "isSystem": true,
+            "isReadOnly": false,
+            "description": null,
+            "multiplicity": {
+                "lower": 0,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": null
+        },
+        {
+            "name": "_inactive",
+            "type": "Boolean",
+            "isSystem": true,
+            "isReadOnly": false,
+            "description": null,
+            "multiplicity": {
+                "lower": 1,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": null
+        },
+        {
+            "name": "_connector",
+            "type": "Text",
+            "isSystem": true,
+            "isReadOnly": false,
+            "description": null,
+            "multiplicity": {
+                "lower": 1,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": null
+        },
+        {
+            "name": "PlatformType",
+            "type": "Text",
+            "isSystem": false,
+            "isReadOnly": false,
+            "description": "",
+            "multiplicity": {
+                "lower": 1,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": ""
+        },
+        {
+            "name": "Username",
+            "type": "Text",
+            "isSystem": false,
+            "isReadOnly": false,
+            "description": "",
+            "multiplicity": {
+                "lower": 1,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": ""
+        },
+        {
+            "name": "Password",
+            "type": "Text",
+            "isSystem": false,
+            "isReadOnly": false,
+            "description": "",
+            "multiplicity": {
+                "lower": 0,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": ""
+        },
+        {
+            "name": "DatabaseInstance",
+            "type": "Text",
+            "isSystem": false,
+            "isReadOnly": false,
+            "description": "",
+            "multiplicity": {
+                "lower": 1,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": ""
+        },
+        {
+            "name": "NewPassword",
+            "type": "Text",
+            "isSystem": false,
+            "isReadOnly": true,
+            "description": "",
+            "multiplicity": {
+                "lower": 0,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": ""
+        },
+        {
+            "name": "ChangePassword",
+            "type": "Boolean",
+            "isSystem": false,
+            "isReadOnly": false,
+            "description": "",
+            "multiplicity": {
+                "lower": 0,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": ""
+        },
+        {
+            "name": "ConnectorUsername",
+            "type": "Text",
+            "isSystem": false,
+            "isReadOnly": false,
+            "description": "",
+            "multiplicity": {
+                "lower": 1,
+                "upper": 1
+            },
+            "aggregationKind": "None",
+            "isSensitiveData": null,
+            "dependsOnAttribute": ""
+        }
+    ],
+    "description": "",
+    "dataBehaviours": [],
+    "behaviourRuntime": "Internal",
+    "entityBehaviours": [{
+            "name": "Initializer",
+            "type": "Initialize",
+            "attribute": null,
+            "expression": "if (this._Context.Operation.IsNew)\r\n{\r\n    DatabaseInstance = \"Default\";\r\n}",
+            "description": ""
+        },
+        {
+            "name": "BeforeSave",
+            "type": "BeforeSave",
+            "attribute": null,
+            "expression": "if(_Context.Operation.Action != Action.EntityCreate && _Context.Operation.Action != Action.EntityUpdate)\n    return;\n\nif (!((bool)this.ChangePassword))\n    return;\n    \nvar args = new Dictionary<string, object> \n{ \n    { \"Text\", this.NewPassword }\n};\n\nvar encrypted = SystemApplicationBehaviours.Encrypt(args);\n\nthis.Password = encrypted[\"EncryptedText\"].ToString();\nthis.ChangePassword = false;\nthis.NewPassword = \"\";",
+            "description": ""
+        }
+    ],
+    "dataAccessRuntime": "External",
+    "behaviourNamespaces": [],
+    "executesInConnector": true,
+    "behaviourDependencies": [{
+            "name": "StdBE900",
+            "path": "C:\\Program Files (x86)\\Common Files\\PRIMAVERA\\SG900\\Interop.StdBE900.dll",
+            "type": "File",
+            "version": null,
+            "description": "",
+            "assemblyName": "Interop.StdBE900",
+            "executionLocation": "External"
+        },
+        {
+            "name": "ErpBS900",
+            "path": "C:\\Program Files (x86)\\Common Files\\PRIMAVERA\\SG900\\Interop.ErpBS900.dll",
+            "type": "File",
+            "version": null,
+            "description": "",
+            "assemblyName": "Interop.ErpBS900",
+            "executionLocation": "External"
+        },
+        {
+            "name": "GcpBE900",
+            "path": "C:\\Program Files (x86)\\Common Files\\PRIMAVERA\\SG900\\Interop.GcpBE900.dll",
+            "type": "File",
+            "version": null,
+            "description": "",
+            "assemblyName": "Interop.GcpBE900",
+            "executionLocation": "External"
+        },
+        {
+            "name": "IGcpBS900",
+            "path": "C:\\Program Files (x86)\\Common Files\\PRIMAVERA\\SG900\\Interop.IGcpBS900.dll",
+            "type": "File",
+            "version": null,
+            "description": "",
+            "assemblyName": "Interop.IGcpBS900",
+            "executionLocation": "External"
+        },
+        {
+            "name": "RhpBE900",
+            "path": "C:\\Program Files (x86)\\Common Files\\PRIMAVERA\\SG900\\Interop.RhpBE900.dll",
+            "type": "File",
+            "version": null,
+            "description": "",
+            "assemblyName": "Interop.RhpBE900",
+            "executionLocation": "External"
+        },
+        {
+            "name": "IRhpBS900",
+            "path": "C:\\Program Files (x86)\\Common Files\\PRIMAVERA\\SG900\\Interop.IRhpBS900.dll",
+            "type": "File",
+            "version": null,
+            "description": "",
+            "assemblyName": "Interop.IRhpBS900",
+            "executionLocation": "External"
+        },
+        {
+            "name": "StdPlatBS900",
+            "path": "C:\\Program Files (x86)\\Common Files\\PRIMAVERA\\SG900\\Interop.StdPlatBS900.dll",
+            "type": "File",
+            "version": null,
+            "description": "",
+            "assemblyName": "Interop.StdPlatBS900",
+            "executionLocation": "External"
+        },
+        {
+            "name": "ErpDS900",
+            "path": "C:\\Program Files (x86)\\Common Files\\PRIMAVERA\\SG900\\Interop.ErpDS900.dll",
+            "type": "File",
+            "version": null,
+            "description": "",
+            "assemblyName": "Interop.ErpDS900",
+            "executionLocation": "External"
+        },
+        {
+            "name": "ADODB",
+            "path": "C:\\Program Files (x86)\\Common Files\\PRIMAVERA\\SG900\\ADODB.dll",
+            "type": "File",
+            "version": null,
+            "description": "",
+            "assemblyName": "ADODB",
+            "executionLocation": "External"
+        }
+    ]
+}

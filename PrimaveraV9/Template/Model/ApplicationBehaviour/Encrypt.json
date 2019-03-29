@@ -1,0 +1,27 @@
+{
+  "name": "Encrypt",
+  "dataSource": "System",
+  "expression": "var keyString = SystemApplicationBehaviours.GetEncryptionKey()[\"key\"].ToString();\r\nvar key = Encoding.UTF8.GetBytes(keyString.PadRight(32).Substring(0,32));\r\nvar text = args[\"Text\"].ToString();\r\n\r\nusing (var aes = Aes.Create())\r\n{\r\n    using (var encryptor = aes.CreateEncryptor(key, aes.IV))\r\n    {\r\n        using (var msEncrypt = new MemoryStream())\r\n        {\r\n            using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))\r\n            {\r\n                using (var swEncrypt = new StreamWriter(csEncrypt))\r\n                {\r\n                    swEncrypt.Write(text);\r\n                }\r\n\r\n                var iv = aes.IV;\r\n\r\n                var decryptedContent = msEncrypt.ToArray();\r\n\r\n                var result = new byte[iv.Length + decryptedContent.Length];\r\n\r\n                Buffer.BlockCopy(iv, 0, result, 0, iv.Length);\r\n                Buffer.BlockCopy(decryptedContent, 0, result, iv.Length, decryptedContent.Length);\r\n\r\n                return new Dictionary<string, object> \r\n                {\r\n                    { \"EncryptedText\", Convert.ToBase64String(result) }\r\n                };\r\n            }\r\n        }\r\n    }\r\n}",
+  "description": "",
+  "executionLocation": "Internal",
+  "behaviourNamespaces": [
+    {
+      "name": "SystemSecurityCryptography",
+      "description": "",
+      "executionLocation": "Internal",
+      "fullyQualifiedName": "System.Security.Cryptography"
+    },
+    {
+      "name": "SystemText",
+      "description": "",
+      "executionLocation": "Internal",
+      "fullyQualifiedName": "System.Text"
+    },
+    {
+      "name": "SystemIO",
+      "description": "",
+      "executionLocation": "Internal",
+      "fullyQualifiedName": "System.IO"
+    }
+  ]
+}
