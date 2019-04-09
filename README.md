@@ -3,6 +3,7 @@ Templates repository for the OMNIA Platform version 3.
 
 ## Micro Templates
 
+ - [Chart Bundle](./ChartBundle/)
  - [Email Notifications](./EmailNotifications/)
  - [PRIMAVERA ERP V9](./PrimaveraV9/)
 
