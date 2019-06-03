@@ -6,6 +6,7 @@ Templates repository for the OMNIA Platform version 3.
  - [Chart Bundle](./ChartBundle/)
  - [Email Notifications](./EmailNotifications/)
  - [PRIMAVERA ERP V9](./PrimaveraV9/)
+ - [Project Costs Management](./ProjectCostManagement)
 
 
 ## Documentation
