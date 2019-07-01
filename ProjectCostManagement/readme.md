@@ -5,11 +5,17 @@ Basic starter template for a project management web application.
 
 ## Getting started
 
- 1. Import the template .zip to your OMNIA tenant;
+(If you alread have a Tenant, you can start in step 3)
+
+ 1. Create a new Tenant in the Management area;
+ 
+ 2. Access to the Tenant Modeler;
+ 
+ 3. Import the template .zip to your OMNIA tenant using the option in the modeler Homepage;
  
  > https://github.com/OMNIALowCode/omnia3-templates/blob/master/ProjectCostManagement/Template/ProjectManagementTemplate.zip?raw=true
 
- 2. Build and Deploy your model;
+ 4. Build and Deploy your model;
 
 ## More info
 
