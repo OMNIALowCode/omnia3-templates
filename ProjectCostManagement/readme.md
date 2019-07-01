@@ -5,7 +5,7 @@ Basic starter template for a project management web application.
 
 ## Getting started
 
-(If you alread have a Tenant, you can start in step 3)
+_(If you alread have a Tenant, you can start in step 3)_
 
  1. Create a new Tenant in the Management area;
  
