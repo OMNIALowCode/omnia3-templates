@@ -19,6 +19,6 @@ _(If you alread have a Tenant, you can start in step 3)_
 
 ## More info
 
-Documentation for this template can be found on file "Project Management - Design.pdf" and a schema with the implementation logical view in LogicalView.png
+Documentation for this template can be found on file "Project Management - Design.pdf" and a schema with the implementation logical view in LogicalView.png.
 
 To know more about our Import/Export feature, visit this [blog post](https://omnialowcode.com/blog/templates-from-micro-to-macro/).
