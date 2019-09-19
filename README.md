@@ -13,7 +13,7 @@ Templates repository for the OMNIA Platform version 3.
 
 ## Documentation
 
-You can find documentation at [https://docs.numbersbelieve.com/](https://docs.numbersbelieve.com/omnia3_modeler_webcomponents.html).
+You can find documentation at [https://docs.omnialowcode.com/](https://docs.omnialowcode.com/omnia3_modeler_webcomponents.html).
 
 ## License
 
