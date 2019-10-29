@@ -2,6 +2,10 @@
 
 Basic starter template for a web application that allows Employees submit their own ideas to improve its Company.
 
+![Home Dashboard](https://omnialowcode.com/wp-content/uploads/2019/10/github1.jpg)
+
+![Idea Submission Form](https://omnialowcode.com/wp-content/uploads/2019/10/github2.jpg)
+
 
 ## Getting started
 
