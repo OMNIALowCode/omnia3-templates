@@ -9,6 +9,7 @@ Templates repository for the OMNIA Platform version 3.
  - [PRIMAVERA ERP V10](./PrimaveraV10/)
  - [Project Costs Management](./ProjectCostManagement)
  - [File Server](./FileServer)
+ - [Idea Management](./IdeaTemplate)
 
 
 ## Documentation
