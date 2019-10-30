@@ -20,6 +20,16 @@ _(If you alread have a Tenant, you can start in step 3)_
  > https://github.com/OMNIALowCode/omnia3-templates/blob/master/IdeaTemplate/Template/IdeaManagementTemplate.zip?raw=true
 
  4. Build and Deploy your model;
+ 
+ After importing, building and deploying, visit your application, go to "Configurations" and add the following instances, in this order:  
+	
+ 1. Create Company;
+	2. Create Vote Type (Upvote - Downvote);
+	3. Create Employes and associate to user (change "Username" label to "Associate User (email)"
+	
+ Lastly visit the "Series" menu option, "Idea Serie", and create one.  
+ 
+ That's it, your app is now ready.
 
 ## More info
 
