@@ -27,7 +27,7 @@ _(If you alread have a Tenant, you can start in step 3)_
  
  2. Create Vote Type (Upvote - Downvote);
 
- 3. Create Employes and associate to user (change "Username" label to "Associate User (email)"
+ 3. Create Employes and Associate it to a user (email)"
 	
  Lastly visit the "Series" menu option, "Idea Serie", and create one.  
  
