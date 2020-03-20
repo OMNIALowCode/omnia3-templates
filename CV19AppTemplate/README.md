@@ -14,14 +14,17 @@ Template of an internally developed OMNIA application to help companies overcome
  4. Add your coworkers (or a shared internal email) to the role "Consult";
  5. That's it, all your coworkers now have access to your company's COVID-19 documents and communications.
 
+## Roles
+
+- Admin: the person (or people) responsible for inputing and updating all COVID-19 information within the workforce; 
+- Consult: the role that the workforce will use to access all information and documentation;
 
 ## Application Features
 
 - Automatically generate COVID-19 guideline documents and general workforce recomendations. These documents are template-based, allowing companies to easily edit them, if needed.
 - Upload internal company documents such as Contingency Plan, new time tables, etc, and make them imediatelly available to the workforce;
 - Upload COVID-19 related internal bulletins (separate from other documents)
-- Check the current status of the pandemic on a dedicated "Status" dashboard embeded with the recommended WHO COVID-19 tracker (see dashboard source)  
-
+- Check the current status of the pandemic on a dedicated "Status" dashboard embeded with the recommended WHO COVID-19 tracker (see dashboard source)
 
 ## Let's evercome this together
 
