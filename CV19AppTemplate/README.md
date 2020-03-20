@@ -21,7 +21,7 @@ Template of an internally developed OMNIA application to help companies overcome
 
 ## Application Features
 
-- Automatically generate COVID-19 guideline documents and general workforce recomendations. These documents are template-based, allowing companies to easily edit them, if needed.
+- Automatically generate COVID-19 guideline documents and general workforce recomendations. These documents are template-based (adapted for Portugal by default), allowing companies to easily edit them, if needed.
 - Upload internal company documents such as Contingency Plan, new time tables, etc, and make them imediatelly available to the workforce;
 - Upload COVID-19 related internal bulletins (separate from other documents)
 - Check the current status of the pandemic on a dedicated "Status" dashboard embeded with the recommended WHO COVID-19 tracker (see dashboard source).
@@ -43,7 +43,7 @@ Template of an internally developed OMNIA application to help companies overcome
 ### Consult Status Page
 ![Consult Status Page](https://omnialowcode.com/wp-content/uploads/2020/03/status-dashboard.png)
 
-## Let's evercome this together
+## Let's overcome this together
 
 We urge everyone interested in this application to join us and contribute to improve this application as needs start to appear. Together we can improve faster, better and without wasted time (there's no need for two companies to develop two solutions to the same problem). 
 
