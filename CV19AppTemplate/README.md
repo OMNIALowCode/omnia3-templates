@@ -28,19 +28,19 @@ Template of an internally developed OMNIA application to help companies overcome
 
 ## User Interface 
 
-Admin Configuration Dashboard
+### Admin Configuration Dashboard
 ![Admin Configuration Dashboard](https://omnialowcode.com/wp-content/uploads/2020/03/configUI.png)
 
-Admin Configuration Form
+### Admin Configuration Form
 ![Admin Configuration Form](https://omnialowcode.com/wp-content/uploads/2020/03/app-config-screen.gif)
 
-Consult Home Dashboard
+### Consult Home Dashboard
 ![Consult Home Dashboard](https://omnialowcode.com/wp-content/uploads/2020/03/consult-ui.png)
 
-Consult Document-specific Page
+### Consult Document-specific Page
 ![Consult Document-specific Page](https://omnialowcode.com/wp-content/uploads/2020/03/symptoms-dashboard.png)
 
-Consult Status Page
+### Consult Status Page
 ![Consult Status Page](https://omnialowcode.com/wp-content/uploads/2020/03/status-dashboard.png)
 
 ## Let's evercome this together
