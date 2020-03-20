@@ -1,6 +1,6 @@
  # COVID-19 Application Template
 
-Template of an internally developed OMNIA application to help companies overcome some of the prevention, documentation and information centralization issues that the COVID-19 restricition triggered. This application is free to use for everyone (scroll down if you want to use/try it).
+Template of an internally developed OMNIA application to help companies overcome some of the prevention, documentation and information centralization issues that the COVID-19 restricitions triggered. This application is free to use for everyone (scroll down if you want to use/try it).
 
 
 ## Getting started
