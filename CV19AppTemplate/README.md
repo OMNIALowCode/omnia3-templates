@@ -45,7 +45,7 @@ Template of an internally developed OMNIA application to help companies overcome
 
 ## Let's overcome this together
 
-We urge everyone interested in this application to join us and contribute to improve this application as needs start to appear. Together we can improve faster, better and without wasted time (there's no need for two companies to develop two solutions to the same problem). 
+We urge everyone interested in this application to join us and contribute to improve it as needs start to appear. Together we can improve faster, better and without wasted time (there's no need for two companies to develop two solutions to the same problem). 
 
 We'll be improving upon this application soon and updating it right here for all to use it as well.
 
