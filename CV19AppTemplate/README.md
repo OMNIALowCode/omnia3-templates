@@ -7,7 +7,7 @@ Template of an internally developed OMNIA application to help companies overcome
 
  1. Import to your OMNIA tenant the template Zip;
 
-> https://github.com/OMNIALowCode/omnia3-templates/blob/master/PrimaveraV10/Template/PrimaveraV10Template.zip?raw=true
+> https://github.com/OMNIALowCode/omnia3-templates/blob/master/CV19AppTemplate/Template/CV19_v1.zip?raw=true
 
  2. Build & Deploy the model;
  3. Visit the application and use the "Configuration" tile and fill the configuration form with your company info;
