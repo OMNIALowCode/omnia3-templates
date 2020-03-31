@@ -14,10 +14,10 @@ Template to add basic charts to your model.
 
 ## Included charts
 
- - Pie chart [(see here)](https://omnialowcode.github.io/omnia3-samples/webcomponents/pie-chart/index.html)
- - Bar chart [(see here)](https://omnialowcode.github.io/omnia3-samples/webcomponents/bar-chart/index.html)
- - Line chart [(see here)](https://omnialowcode.github.io/omnia3-samples/webcomponents/line-chart/index.html)
- - Tiles [(see here)](https://omnialowcode.github.io/omnia3-samples/webcomponents/tile/index.html)
+ - Pie chart [(see here)](https://omnialowcode.github.io/omnia3-samples/webcomponents/docs/?path=/story/visualization-pie-chart--default)
+ - Bar chart [(see here)](https://omnialowcode.github.io/omnia3-samples/webcomponents/docs/?path=/story/visualization-bar-chart--default)
+ - Line chart [(see here)](https://omnialowcode.github.io/omnia3-samples/webcomponents/docs/?path=/story/visualization-line-chart--default)
+ - Tiles [(see here)](https://omnialowcode.github.io/omnia3-samples/webcomponents/docs/?path=/story/visualization-tile--default)
 
 ## Documentation
 
