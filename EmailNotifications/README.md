@@ -19,17 +19,25 @@ To send notifications, simply add the following code block to the behaviour wher
 
 ```C#
 
-    string to = "";
-    string subject = "";
-    string body = "";
+    //Set as true to send email with Omnia default smtp server. Set as false to send with a custom smtp server
+    bool sendByApi = true;
+
+    string sendTo = "";
+    string subjectTextTemplate = "";
+    string bodyTextTemplate = "";
+
+    //Dictionary with data to be used on email composal. Can be set manually or by transforming object into Dto
+    Dictionary<string, object> dto = this.ToDto();
     
     // Send email
     SystemApplicationBehaviours.SendEmailNotification(
     new Dictionary<string, object>
         {
-            {"Email", to}, 
-            {"Subject", subject}, 
-            {"Body", body}
+            {"SendByApi", sendByApi}, 
+            {"SendTo", sendTo}, 
+            {"SubjectTemplate", subjectTextTemplate}, 
+            {"BodyTemplate", bodyTextTemplate},
+            {"Dto", dto}
         }, 
         context);
 
