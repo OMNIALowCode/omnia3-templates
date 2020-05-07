@@ -19,17 +19,26 @@ To send notifications, simply add the following code block to the behaviour wher
 
 ```C#
 
-    string to = "";
-    string subject = "";
-    string body = "";
+    //Set as true to send email using a custom smtp server. Set as false to use Omnia default smtp server.
+    var usingExternalSmtpServer = false;
+
+    var sendTo = "";
+    var subjectTextTemplate = "";
+    var bodyTextTemplate = "";
+
+    //Dictionary with data to be used on email composition. Can be set manually or by transforming the object into Dto
+    Dictionary<string, object> dto = this.ToDto();
     
     // Send email
     SystemApplicationBehaviours.SendEmailNotification(
     new Dictionary<string, object>
         {
-            {"Email", to}, 
-            {"Subject", subject}, 
-            {"Body", body}
+            //UsingExternalSmtpServer is an optional parameter. If not sent, default value will be assumed as false
+            {"UsingExternalSmtpServer", usingExternalSmtpServer}, 
+            {"SendTo", sendTo}, 
+            {"SubjectTextTemplate", subjectTextTemplate}, 
+            {"BodyTextTemplate", bodyTextTemplate},
+            {"Dto", dto}
         }, 
         context);
 
