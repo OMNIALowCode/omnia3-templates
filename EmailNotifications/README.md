@@ -25,9 +25,6 @@ To send notifications, simply add the following code block to the behaviour wher
     var sendTo = "";
     var subjectTextTemplate = "";
     var bodyTextTemplate = "";
-
-    //Dictionary with data to be used on email composition. Can be set manually or by transforming the object into Dto
-    Dictionary<string, object> dto = this.ToDto();
     
     // Send email
     SystemApplicationBehaviours.SendEmailNotification(
@@ -38,7 +35,7 @@ To send notifications, simply add the following code block to the behaviour wher
             {"SendTo", sendTo}, 
             {"SubjectTextTemplate", subjectTextTemplate}, 
             {"BodyTextTemplate", bodyTextTemplate},
-            {"Dto", dto}
+            {"Dto", this.ToDto() }
         }, 
         context);
 
