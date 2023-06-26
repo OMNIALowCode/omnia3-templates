@@ -4,6 +4,7 @@
     {
       "name": "_code",
       "type": "Text",
+      "length": null,
       "isSystem": true,
       "isReadOnly": false,
       "description": null,
@@ -11,11 +12,14 @@
         "lower": 1,
         "upper": 1
       },
-      "aggregationKind": "None"
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
     },
     {
       "name": "_name",
       "type": "Text",
+      "length": null,
       "isSystem": true,
       "isReadOnly": false,
       "description": null,
@@ -23,11 +27,14 @@
         "lower": 1,
         "upper": 1
       },
-      "aggregationKind": "None"
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
     },
     {
       "name": "_description",
       "type": "Text",
+      "length": null,
       "isSystem": true,
       "isReadOnly": false,
       "description": null,
@@ -35,11 +42,14 @@
         "lower": 0,
         "upper": 1
       },
-      "aggregationKind": "None"
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
     },
     {
       "name": "_inactive",
       "type": "Boolean",
+      "length": null,
       "isSystem": true,
       "isReadOnly": false,
       "description": null,
@@ -47,7 +57,9 @@
         "lower": 1,
         "upper": 1
       },
-      "aggregationKind": "None"
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
     }
   ],
   "description": "Default DataSource",
@@ -57,5 +69,16 @@
   "dataAccessRuntime": "Internal",
   "behaviourNamespaces": [],
   "executesInConnector": false,
-  "behaviourDependencies": []
+  "behaviourDependencies": [
+    {
+      "name": "Cryptography",
+      "path": "",
+      "type": "Expression",
+      "version": null,
+      "expression": "\tusing global::System;\n    using global::System.IO;\n    using global::System.Security.Cryptography;\n    using global::System.Text;\n\n    namespace Cryptography\n    {\n        public static class Data\n        {\n            public static string Decrypt(string encryptedText)\n            {\n                var keyString = GetEncryptionKey();\n                var fullCipher = Convert.FromBase64String(encryptedText);\n\n                var iv = new byte[16];\n                var cipher = new byte[fullCipher.Length - iv.Length];\n\n                Buffer.BlockCopy(fullCipher, 0, iv, 0, iv.Length);\n                Buffer.BlockCopy(fullCipher, iv.Length, cipher, 0, fullCipher.Length - iv.Length);\n                var key = Encoding.UTF8.GetBytes(keyString.PadRight(32).Substring(0, 32));\n\n                using (var aesAlg = Aes.Create())\n                using (var decryptor = aesAlg.CreateDecryptor(key, iv))\n                using (var msDecrypt = new MemoryStream(cipher))\n                using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))\n                using (var srDecrypt = new StreamReader(csDecrypt))\n                    return srDecrypt.ReadToEnd();\n            }\n\n            public static string Encrypt(string text)\n            {\n                var keyString = GetEncryptionKey();\n                var key = Encoding.UTF8.GetBytes(keyString.PadRight(32).Substring(0, 32));\n\n                using (var aes = Aes.Create())\n                using (var encryptor = aes.CreateEncryptor(key, aes.IV))\n                using (var msEncrypt = new MemoryStream())\n                using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))\n                {\n                    using (var swEncrypt = new StreamWriter(csEncrypt))\n                        swEncrypt.Write(text);\n\n                    var iv = aes.IV;\n                    var decryptedContent = msEncrypt.ToArray();\n                    var result = new byte[iv.Length + decryptedContent.Length];\n                    Buffer.BlockCopy(iv, 0, result, 0, iv.Length);\n                    Buffer.BlockCopy(decryptedContent, 0, result, iv.Length, decryptedContent.Length);\n                    return Convert.ToBase64String(result);\n                }\n            }\n\n            private static string GetEncryptionKey() => \"sm5VBrWG0fmyRs5GzUJwGzJbXJ42M3GK6BXtZZ26dmzilze9ZV\";\n        }\n    }",
+      "description": "",
+      "assemblyName": "",
+      "executionLocation": "Internal"
+    }
+  ]
 }

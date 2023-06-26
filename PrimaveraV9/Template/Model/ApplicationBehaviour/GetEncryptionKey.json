@@ -1,8 +1,0 @@
-{
-  "name": "GetEncryptionKey",
-  "dataSource": "System",
-  "expression": "return new Dictionary<string, object>\n{\n    { \"key\", \"0K1BR6J2LXLpEWhxqJ1C15GZr04497JFaq8qf8m6xKT4vDAkY\" }\n};",
-  "description": "",
-  "executionLocation": "Internal",
-  "behaviourNamespaces": []
-}

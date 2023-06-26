@@ -38,6 +38,14 @@
         {
           "key": "isSensitiveData",
           "value": "false"
+        },
+        {
+          "key": "minimumLength",
+          "value": "0"
+        },
+        {
+          "key": "maximumLength",
+          "value": "null"
         }
       ],
       "behaviours": [],
@@ -78,6 +86,14 @@
         {
           "key": "isSensitiveData",
           "value": "false"
+        },
+        {
+          "key": "minimumLength",
+          "value": "0"
+        },
+        {
+          "key": "maximumLength",
+          "value": "null"
         }
       ],
       "behaviours": [],
@@ -118,6 +134,14 @@
         {
           "key": "isSensitiveData",
           "value": "false"
+        },
+        {
+          "key": "minimumLength",
+          "value": "0"
+        },
+        {
+          "key": "maximumLength",
+          "value": "null"
         }
       ],
       "behaviours": [],
@@ -198,6 +222,14 @@
         {
           "key": "isSensitiveData",
           "value": "false"
+        },
+        {
+          "key": "minimumLength",
+          "value": "0"
+        },
+        {
+          "key": "maximumLength",
+          "value": "null"
         }
       ],
       "behaviours": [],
@@ -238,6 +270,14 @@
         {
           "key": "isSensitiveData",
           "value": "false"
+        },
+        {
+          "key": "minimumLength",
+          "value": "0"
+        },
+        {
+          "key": "maximumLength",
+          "value": "null"
         }
       ],
       "behaviours": [],
@@ -278,6 +318,14 @@
         {
           "key": "isSensitiveData",
           "value": "false"
+        },
+        {
+          "key": "minimumLength",
+          "value": "0"
+        },
+        {
+          "key": "maximumLength",
+          "value": "null"
         }
       ],
       "behaviours": [],
@@ -393,6 +441,14 @@
         {
           "key": "isSensitiveData",
           "value": "false"
+        },
+        {
+          "key": "minimumLength",
+          "value": "0"
+        },
+        {
+          "key": "maximumLength",
+          "value": "null"
         }
       ],
       "behaviours": [],

@@ -1,0 +1,14 @@
+{
+  "name": "PrimaveraDbInstanceQuery",
+  "joins": [],
+  "table": {
+    "alias": null,
+    "filter": null,
+    "definition": "Primavera",
+    "properties": [],
+    "orderedProperties": []
+  },
+  "dataSource": null,
+  "expression": "SELECT \r\n    ds._code,\r\n    ds._name,\r\n    ds.databaseinstance\r\nFROM vw_Primavera ds\r\nwhere ds._inactive = false ",
+  "description": ""
+}
