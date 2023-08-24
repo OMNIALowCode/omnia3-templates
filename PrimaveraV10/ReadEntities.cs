@@ -15,17 +15,6 @@
 
         public class Entities
         {
-            public static async Task<int> executQueryAsync(string dataSource, string query, Context context)
-            {
-                string connectionString = await GetConnectionString(context, false, dataSource);
-                using (var sqlConnection = new SqlConnection(connectionString))
-                {
-                    await sqlConnection.OpenAsync();
-                    using (var adp = new SqlCommand(query, sqlConnection))
-                        return await adp.ExecuteNonQueryAsync();
-                }
-            }
-
             public static async Task<List<IDictionary<string, object>>> QueryERP(string dataSource, string query, Context context)
             {
                 var queryData = new ListQueryDefinition()
@@ -81,7 +70,10 @@
                     var parameterName = $"@parameter_{entry.Key}";
                     queryDefinition.QueryString = queryDefinition.QueryString.Replace($"'@{entry.Key}@'", parameterName).Replace($"@{entry.Key}@", parameterName);
 
-                    parameters.Add(new SqlParameter(parameterName, entry.Value));
+                    if (entry.Value is null)
+                        parameters.Add(new SqlParameter(parameterName, DBNull.Value));
+                    else
+                        parameters.Add(new SqlParameter(parameterName, entry.Value));
                 }
 
                 var filterSqlAsString = filterSql.ToString();
