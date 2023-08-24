@@ -57,7 +57,7 @@
                 var filterSql = new StringBuilder();
                 var sortSql = new StringBuilder();
 
-                var paramaters = new List<SqlParameter>();
+                var parameters = new List<SqlParameter>();
 
                 if (queryDefinition.QueryContext != null)
                 {
@@ -81,7 +81,7 @@
                     var parameterName = $"@parameter_{entry.Key}";
                     queryDefinition.QueryString = queryDefinition.QueryString.Replace($"'@{entry.Key}@'", parameterName).Replace($"@{entry.Key}@", parameterName);
 
-                    paramaters.Add(new SqlParameter(parameterName, entry.Value));
+                    parameters.Add(new SqlParameter(parameterName, entry.Value));
                 }
 
                 var filterSqlAsString = filterSql.ToString();
@@ -123,8 +123,8 @@
                         await connection.OpenAsync();
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
-                            if (paramaters.Count > 0)
-                                command.Parameters.AddRange(paramaters.ToArray());
+                            if (parameters.Count > 0)
+                                command.Parameters.AddRange(parameters.ToArray());
 
                             using (SqlDataReader dataReader = await command.ExecuteReaderAsync())
                             {
@@ -217,7 +217,7 @@
                                 if (unaryFilter.Operator.Equals(QueryComparisonOperator.Like))
                                     filterSql.Append(", '%')");
 
-                                paramaters.Add(new SqlParameter(parameterName, unaryFilter.Value));
+                                parameters.Add(new SqlParameter(parameterName, unaryFilter.Value));
                             }
                             break;
 
