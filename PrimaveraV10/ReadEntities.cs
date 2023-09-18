@@ -203,7 +203,7 @@
                                         throw new ArgumentOutOfRangeException();
                                 }
 
-                                var parameterName = $"@filter_{unaryFilter.Path}";
+                                var parameterName = $"@filter_{unaryFilter.Path}_{Guid.NewGuid().ToString("N")}";
                                 filterSql.Append(parameterName);
 
                                 if (unaryFilter.Operator.Equals(QueryComparisonOperator.Like))
