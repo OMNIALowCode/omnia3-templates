@@ -462,7 +462,7 @@
     {
       "name": "Initializer",
       "type": "Initialize",
-      "expression": "this.platformTypeSelect.options = [\r\n    { value : \"tpProfissional\", text : \"Professional\" },\r\n    { value : \"tpEmpresarial\", text : \"Executive\" }\r\n];\r\n\r\nthis._metadata.elements.newPassword.attributes.isReadOnly = !this.changePassword;",
+      "expression": "this.platformTypeSelect.options = [\r\n    { value : \"tpProfissional\", text : \"Professional\" },\r\n    { value : \"tpEmpresarial\", text : \"Executive\" },\r\n    { value : \"tpEvolution\", text : \"Evolution\" }\r\n];\r\n\r\nthis._metadata.elements.newPassword.attributes.isReadOnly = !this.changePassword;",
       "description": ""
     }
   ],

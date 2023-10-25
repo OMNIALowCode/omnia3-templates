@@ -197,7 +197,18 @@
                                         filterSql.Append(" <> ");
                                         break;
                                     case QueryComparisonOperator.Like:
+                                    case QueryComparisonOperator.EndsWith:
                                         filterSql.Append(" LIKE CONCAT('%', ");
+                                        break;
+                                    case QueryComparisonOperator.NotEndsWith:                                    
+                                    case QueryComparisonOperator.NotLike:
+                                        filterSql.Append(" NOT LIKE CONCAT('%', ");
+                                        break;
+                                    case QueryComparisonOperator.StartsWith:
+                                        filterSql.Append(" LIKE CONCAT( ");
+                                        break;
+                                    case QueryComparisonOperator.NotStartsWith:
+                                        filterSql.Append(" NOT LIKE CONCAT( ");
                                         break;
                                     default:
                                         throw new ArgumentOutOfRangeException();
@@ -206,8 +217,11 @@
                                 var parameterName = $"@filter_{unaryFilter.Path}_{Guid.NewGuid().ToString("N")}";
                                 filterSql.Append(parameterName);
 
-                                if (unaryFilter.Operator.Equals(QueryComparisonOperator.Like))
+                                if (unaryFilter.Operator.Equals(QueryComparisonOperator.Like) || unaryFilter.Operator.Equals(QueryComparisonOperator.NotLike) || unaryFilter.Operator.Equals(QueryComparisonOperator.StartsWith) || unaryFilter.Operator.Equals(QueryComparisonOperator.NotStartsWith))
                                     filterSql.Append(", '%')");
+
+                                if (unaryFilter.Operator.Equals(QueryComparisonOperator.EndsWith) || unaryFilter.Operator.Equals(QueryComparisonOperator.NotEndsWith))
+                                    filterSql.Append(")");
 
                                 parameters.Add(new SqlParameter(parameterName, unaryFilter.Value));
                             }
