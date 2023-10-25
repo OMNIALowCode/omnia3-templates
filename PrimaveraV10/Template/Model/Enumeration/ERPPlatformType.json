@@ -1,0 +1,21 @@
+{
+  "name": "ERPPlatformType",
+  "values": [
+    {
+      "name": "tpProfissional",
+      "order": 1,
+      "description": ""
+    },
+    {
+      "name": "tpEmpresarial",
+      "order": 2,
+      "description": ""
+    },
+    {
+      "name": "tpEvolution",
+      "order": 3,
+      "description": ""
+    }
+  ],
+  "description": ""
+}
