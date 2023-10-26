@@ -1,0 +1,76 @@
+{
+  "name": "ERPPlatformTypeSelector",
+  "type": "Selector",
+  "label": "ERPPlatform Type",
+  "elements": [
+    {
+      "row": 1,
+      "name": "tpProfissional",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "Professional",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "tpProfissional"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 2,
+      "name": "tpEmpresarial",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "Executive",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "tpEmpresarial"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 3,
+      "name": "tpEvolution",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "Evolution",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "tpEvolution"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [
+    {
+      "key": "Enumeration",
+      "value": "ERPPlatformType"
+    }
+  ],
+  "behaviours": [],
+  "description": null
+}

@@ -381,34 +381,6 @@
     },
     {
       "row": 5,
-      "name": "PlatformTypeSelect",
-      "size": 6,
-      "type": "WebComponent",
-      "label": "Platform Type",
-      "column": 1,
-      "elements": [],
-      "helpText": "",
-      "isHidden": false,
-      "attributes": [
-        {
-          "key": "webComponentName",
-          "value": "SelectBox"
-        },
-        {
-          "key": "customElementName",
-          "value": "omnia-select"
-        },
-        {
-          "key": "mapping",
-          "value": "PlatformType"
-        }
-      ],
-      "behaviours": [],
-      "description": null,
-      "visibleFrom": null
-    },
-    {
-      "row": 5,
       "name": "DatabaseInstance",
       "size": 6,
       "type": "Input",
@@ -454,6 +426,46 @@
       "behaviours": [],
       "description": null,
       "visibleFrom": null
+    },
+    {
+      "row": 5,
+      "name": "PlatformType",
+      "size": 6,
+      "type": "Selector",
+      "label": "Platform Type",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "min",
+          "value": "1"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "isSensitiveData",
+          "value": "false"
+        },
+        {
+          "key": "enumeration",
+          "value": "ERPPlatformType"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
     }
   ],
   "helpText": null,
@@ -462,7 +474,7 @@
     {
       "name": "Initializer",
       "type": "Initialize",
-      "expression": "this.platformTypeSelect.options = [\r\n    { value : \"tpProfissional\", text : \"Professional\" },\r\n    { value : \"tpEmpresarial\", text : \"Executive\" }\r\n];\r\n\r\nthis._metadata.elements.newPassword.attributes.isReadOnly = !this.changePassword;",
+      "expression": "this._metadata.elements.newPassword.attributes.isReadOnly = !this.changePassword;",
       "description": ""
     }
   ],
